@@ -1,0 +1,238 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 260 100% 70%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 260 100% 70%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* EQ Navigator specific colors - enhanced pastel palette */
+    --eq-primary: 260 60% 70%;
+    --eq-primary-light: 260 60% 85%;
+    --eq-primary-dark: 260 60% 60%;
+    --eq-secondary: 230 70% 80%;
+    --eq-accent: 190 70% 80%;
+    
+    /* Expanded pastel palette with more purple shades */
+    --pastel-purple: 260 60% 85%;
+    --pastel-purple-light: 260 60% 90%;
+    --pastel-purple-dark: 260 60% 75%;
+    --pastel-lavender: 270 60% 85%;
+    --pastel-periwinkle: 240 70% 85%;
+    --pastel-blue: 230 70% 85%;
+    --pastel-sky: 210 70% 85%;
+    --pastel-pink: 340 80% 90%;
+    --pastel-green: 140 50% 85%;
+    --pastel-yellow: 50 80% 85%;
+    --pastel-peach: 30 80% 85%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 260 100% 70%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 260 100% 70%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* EQ Navigator specific colors for dark mode - enhanced pastel colors */
+    --eq-primary: 260 50% 65%;
+    --eq-primary-light: 260 50% 75%;
+    --eq-primary-dark: 260 50% 55%;
+    --eq-secondary: 230 50% 65%;
+    --eq-accent: 190 50% 65%;
+    
+    /* Expanded pastel palette for dark mode */
+    --pastel-purple: 260 40% 65%;
+    --pastel-purple-light: 260 40% 75%;
+    --pastel-purple-dark: 260 40% 55%;
+    --pastel-lavender: 270 40% 65%;
+    --pastel-periwinkle: 240 50% 65%;
+    --pastel-blue: 230 40% 65%;
+    --pastel-sky: 210 40% 65%;
+    --pastel-pink: 340 40% 70%;
+    --pastel-green: 140 30% 65%;
+    --pastel-yellow: 50 40% 65%;
+    --pastel-peach: 30 40% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  .highlight {
+    @apply text-brand-purple font-semibold;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-hover transform hover:-translate-y-1;
+  }
+
+  .button-primary {
+    @apply bg-brand-purple text-white px-6 py-3 rounded-full font-semibold shadow-md transition-all duration-300 hover:bg-brand-dark-purple hover:shadow-lg;
+  }
+
+  .button-secondary {
+    @apply bg-white text-brand-purple border border-brand-purple px-6 py-3 rounded-full font-semibold shadow-sm transition-all duration-300 hover:bg-brand-purple/5;
+  }
+
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-subtle;
+  }
+  
+  /* EQ Navigator specific components - updated to pastel colors */
+  .eq-button-primary {
+    @apply bg-gradient-to-r from-purple-400 to-blue-400 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all duration-300 hover:from-purple-500 hover:to-blue-500 hover:shadow-lg;
+  }
+  
+  .eq-button-secondary {
+    @apply bg-white text-purple-500 border border-purple-400 px-6 py-3 rounded-lg font-semibold shadow-sm transition-all duration-300 hover:bg-purple-50;
+  }
+  
+  .eq-card {
+    @apply bg-white rounded-xl border border-purple-200/30 shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  .eq-section {
+    @apply py-12 px-4 md:px-6;
+  }
+  
+  /* EQ Progress components */
+  .eq-progress-track {
+    @apply h-2.5 bg-purple-100 rounded-full overflow-hidden;
+  }
+  
+  .eq-progress-indicator {
+    @apply h-full bg-gradient-to-r from-purple-400 to-blue-400 rounded-full;
+  }
+  
+  /* Additional gradients for EQ Navigator */
+  .eq-gradient-primary {
+    @apply bg-gradient-to-r from-purple-400 to-blue-400;
+  }
+  
+  .eq-gradient-soft {
+    @apply bg-gradient-to-r from-purple-100 to-blue-100;
+  }
+  
+  .eq-gradient-card {
+    @apply bg-gradient-to-br from-white via-purple-50 to-blue-50;
+  }
+}
+
+/* Import Inter var font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Import Plus Jakarta Sans for headings */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
